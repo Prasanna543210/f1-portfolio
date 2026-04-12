@@ -1,0 +1,203 @@
+{
+  "site": {
+    "ownerName": "Prasanna ",
+    "initials": "PB",
+    "copyrightYear": 2026
+  },
+  "navigation": {
+    "links": ["About", "Skills", "Projects", "Experience", "Contact"],
+    "cta": "Hire Me"
+  },
+  "hero": {
+    "eyebrow": "Code Mode Activated",
+    "headlinePrefix": "Hi, I'm",
+    "headlineName": "Prasanna ",
+    "subheadline": "Backend & Full Stack Developer",
+    "roleLine": "Java · Spring Boot · Flask · React · MongoDB",
+    "primaryCta": "View Projects",
+    "secondaryCta": "Get In Touch",
+    "stats": [
+      { "value": "8.29", "label": "CGPA" },
+      { "value": "5+", "label": "Projects Built" },
+      { "value": "2027", "label": "Graduation Year" },
+      { "value": "100+", "label": "DSA Problems" }
+    ]
+  },
+  "about": {
+    "sectionNumber": "01. ABOUT",
+    "titlePrefix": "The",
+    "titleHighlight": "Developer",
+    "titleSuffix": "Profile",
+    "bio": [
+      "I'm a pre-final year Information Technology student passionate about backend engineering and full stack development.",
+      "I specialize in building scalable RESTful APIs and modern web applications using Java, Flask, and React.",
+      "I enjoy solving complex problems using Data Structures and Algorithms and continuously improving through hands-on projects."
+    ],
+    "facts": [
+      { "label": "COLLEGE", "value": "Bannari Amman Institute of Technology" },
+      { "label": "DEGREE", "value": "B.Tech Information Technology" },
+      { "label": "BACKEND", "value": "Java / Spring Boot / Flask" },
+      { "label": "LOCATION", "value": "Tamil Nadu, India" }
+    ],
+    "cards": [
+      {
+        "icon": "brain",
+        "title": "Problem Solver",
+        "desc": "Strong foundation in Data Structures and Algorithms."
+      },
+      {
+        "icon": "server",
+        "title": "Backend Focus",
+        "desc": "Experienced in building scalable REST APIs."
+      },
+      {
+        "icon": "rocket",
+        "title": "Fast Learner",
+        "desc": "Continuously improving through real-world projects."
+      },
+      {
+        "icon": "trophy",
+        "title": "Hackathon Driven",
+        "desc": "Active in hackathons and coding platforms."
+      }
+    ]
+  },
+  "skills": {
+    "sectionNumber": "02. TECHNICAL",
+    "titlePrefix": "Technical",
+    "titleHighlight": "Skills",
+    "subtitle": "Technologies and tools",
+    "dashboardLabel": "DEVELOPER STACK",
+    "skills": [
+      { "name": "Java", "level": 90, "category": "Backend" },
+      { "name": "Python", "level": 85, "category": "Backend" },
+      { "name": "Spring Boot", "level": 85, "category": "Backend" },
+      { "name": "Flask", "level": 88, "category": "Backend" },
+      { "name": "React (Vite)", "level": 80, "category": "Frontend" },
+      { "name": "HTML5 / CSS3", "level": 85, "category": "Frontend" },
+      { "name": "MongoDB", "level": 82, "category": "Database" },
+      { "name": "MySQL", "level": 80, "category": "Database" }
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Postman",
+      "VS Code",
+      "JWT Authentication",
+      "REST APIs",
+      "Agile Development"
+    ],
+    "categoryColors": {
+      "Frontend": "#E10600",
+      "Backend": "#FF6B35",
+      "Database": "#FFA500"
+    }
+  },
+  "projects": {
+    "sectionNumber": "03. PROJECTS",
+    "titlePrefix": "My",
+    "titleHighlight": "Projects",
+    "subtitle": "Applications I've built",
+    "items": [
+      {
+        "number": "01",
+        "title": "DriveX — Driver Monitoring App",
+        "desc": "Developed a driver safety application that detects inappropriate driver activity and sends real-time alerts to guardians using Twilio API. Built mobile interface using Flutter and integrated backend logic for monitoring and notifications.",
+        "tags": ["Flutter", "Twilio API", "Python", "Real-time Monitoring"],
+        "github": "#",
+        "live": "#",
+        "featured": true,
+        "color": "#E10600"
+      },
+      {
+        "number": "02",
+        "title": "AI-Based COTS Component Selection System",
+        "desc": "Developed a system that converts user requirements into structured component recommendations using rule-based filtering and optimization.",
+        "tags": ["Python", "Flask", "MongoDB"],
+        "github": "#",
+        "live": "#",
+        "color": "#FF6B35"
+      },
+      {
+        "number": "03",
+        "title": "AI-Powered File Management System",
+        "desc": "Built a secure document management system with role-based access control and REST API integration.",
+        "tags": ["React", "Flask", "MongoDB"],
+        "github": "#",
+        "live": "#",
+        "color": "#FFA500"
+      },
+      {
+        "number": "04",
+        "title": "Personalized Campus Web Application",
+        "desc": "Developed a web platform for student interaction and event management.",
+        "tags": ["React", "Flask", "MySQL"],
+        "github": "#",
+        "live": "#",
+        "color": "#E10600"
+      },
+      {
+        "number": "05",
+        "title": "Certification Tracker System",
+        "desc": "Built a certification platform with authentication and workflow tracking.",
+        "tags": ["Spring Boot", "React", "MySQL"],
+        "github": "#",
+        "live": "#",
+        "color": "#FF6B35"
+      }
+    ]
+  },
+  "experience": {
+    "sectionNumber": "04. EXPERIENCE",
+    "titlePrefix": "My",
+    "titleHighlight": "Journey",
+    "subtitle": "Education & experience",
+    "items": [
+      {
+        "year": "2026 — Present",
+        "role": "Java Backend Intern",
+        "company": "goML",
+        "location": "India",
+        "desc": "Currently working on backend development using Java and Spring Boot. Building RESTful APIs, implementing authentication mechanisms, and improving application performance in an agile environment.",
+        "tags": ["Java", "Spring Boot", "REST APIs"],
+        "lap": "ONGOING"
+      },
+      {
+        "year": "2023 — Present",
+        "role": "B.Tech Information Technology Student",
+        "company": "Bannari Amman Institute of Technology",
+        "location": "Tamil Nadu, India",
+        "desc": "Focused on backend development, full stack applications, and problem solving using Data Structures and Algorithms.",
+        "tags": ["Java", "Flask", "React"],
+        "lap": "CURRENT"
+      }
+    ]
+  },
+  "contact": {
+    "sectionNumber": "05. CONTACT",
+    "titlePrefix": "Get",
+    "titleHighlight": "In Touch",
+    "subtitle": "Let's connect",
+    "intro": "I'm currently seeking entry-level Software Developer opportunities. Let's connect and build something impactful.",
+    "recipientEmail": "prasanna19042006@gmail.com",
+    "formSubmitToken": "a43e79c343282d7be1fcd38d4b731d4e",
+    "details": [
+      { "label": "EMAIL", "value": "prasanna19042006@gmail.com", "icon": "mail" },
+      { "label": "PHONE", "value": "+91-7904896686", "icon": "phone" },
+      { "label": "LOCATION", "value": "Tamil Nadu, India", "icon": "map-pin" }
+    ],
+    "socials": [
+      { "platform": "GitHub", "value": "https://github.com/Prasanna543210", "icon": "github" },
+      { "platform": "LinkedIn", "value": "https://www.linkedin.com/in/prasanna-b-b212a52b8", "icon": "linkedin" },
+      { "platform": "LeetCode", "value": "https://leetcode.com/u/prasanna2006/", "icon": "code" }
+    ],
+    "form": {
+      "submitLabel": "Send Message",
+      "sendingLabel": "Sending...",
+      "sentTitle": "Message Sent!",
+      "sentBody": "Thanks! I'll get back to you soon."
+    },
+    "footerStatus": "Open to Work",
+    "footerNote": "Built with React + Vite"
+  }
+}

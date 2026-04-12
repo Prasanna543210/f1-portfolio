@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { scroll-behavior: smooth; }
+  body {
+    background-color: #0A0A0A;
+    color: #F5F5F5;
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0A0A0A; }
+  ::-webkit-scrollbar-thumb { background: #E10600; border-radius: 2px; }
+}
+
+@layer components {
+  .glow-red { box-shadow: 0 0 10px #E10600, 0 0 20px rgba(225, 6, 0, 0.5); }
+  .glow-red-text { text-shadow: 0 0 10px #E10600, 0 0 20px rgba(225, 6, 0, 0.6); }
+  .glass-card {
+    background: rgba(26,26,26,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(225,6,0,0.15);
+  }
+  .glass-card-hover {
+    background: rgba(26,26,26,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(225,6,0,0.15);
+    transition: all 0.3s ease;
+  }
+  .glass-card-hover:hover {
+    border-color: rgba(225,6,0,0.6);
+    box-shadow: 0 0 20px rgba(225,6,0,0.2), 0 8px 32px rgba(0,0,0,0.4);
+    transform: translateY(-4px);
+  }
+  .speed-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .speed-hover:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 12px 40px rgba(225,6,0,0.25);
+  }
+  .carbon-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='10' height='10' fill='%23161616'/%3E%3Crect x='10' y='10' width='10' height='10' fill='%23161616'/%3E%3Crect x='10' y='0' width='10' height='10' fill='%23121212'/%3E%3Crect x='0' y='10' width='10' height='10' fill='%23121212'/%3E%3C/svg%3E");
+  }
+  .racing-stripe::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 2px;
+    background: linear-gradient(90deg, transparent, #E10600, transparent);
+    animation: scanline 3s ease-in-out infinite;
+  }
+  @keyframes scanline {
+    0% { left: -100%; }
+    100% { left: 200%; }
+  }
+  .btn-primary {
+    background: #E10600; color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em; padding: 12px 32px; font-size: 1.1rem;
+    border: 2px solid #E10600; cursor: pointer; transition: all 0.2s ease;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .btn-primary:hover { background: transparent; color: #E10600; box-shadow: 0 0 20px rgba(225,6,0,0.4); }
+  .btn-secondary {
+    background: transparent; color: #F5F5F5;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.1em; padding: 12px 32px; font-size: 1.1rem;
+    border: 2px solid rgba(245,245,245,0.4); cursor: pointer; transition: all 0.2s ease;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+  }
+  .btn-secondary:hover { border-color: #E10600; color: #E10600; }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 0.05em; line-height: 1;
+  }
+  .f1-input {
+    background: rgba(26,26,26,0.8); border: 1px solid rgba(225,6,0,0.2);
+    color: #F5F5F5; padding: 12px 16px; width: 100%;
+    font-family: 'Barlow', sans-serif; transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+  }
+  .f1-input:focus { border-color: #E10600; box-shadow: 0 0 0 2px rgba(225,6,0,0.2), 0 0 15px rgba(225,6,0,0.15); }
+  .f1-input::placeholder { color: rgba(245,245,245,0.3); }
+}
