@@ -12,6 +12,8 @@
     "eyebrow": "Code Mode Activated",
     "headlinePrefix": "Hi, I'm",
     "headlineName": "Prasanna ",
+    "profileImage": "/images/profile.jpg",
+    "profileImageAlt": "Prasanna profile photo",
     "subheadline": "Backend & Full Stack Developer",
     "roleLine": "Java · Spring Boot · Flask · React · MongoDB",
     "primaryCta": "View Projects",
