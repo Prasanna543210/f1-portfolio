@@ -160,8 +160,7 @@
         "role": "Java Backend Intern",
         "company": "goML",
         "location": "India",
-        "desc": "Currently working on backend development using Java and Spring Boot. Building RESTful APIs, implementing authentication mechanisms, and improving application performance in an agile environment.",
-        "tags": ["Java", "Spring Boot", "REST APIs"],
+        "revealSoon": true,
         "lap": "ONGOING"
       },
       {

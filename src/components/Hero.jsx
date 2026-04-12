@@ -1,6 +1,61 @@
 import { motion } from 'framer-motion';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import content from '../content/siteContent.json';
+
+const StatCounter = ({ value, delay = 0 }) => {
+  const raw = String(value ?? '');
+  const numericPart = raw.replace(/[^\d.]/g, '');
+  const target = Number.parseFloat(numericPart);
+  const decimals = (numericPart.split('.')[1] || '').length;
+  const prefix = (raw.match(/^[^\d]*/) || [''])[0];
+  const suffix = (raw.match(/[^\d.]*$/) || [''])[0];
+  const isNumeric = Number.isFinite(target);
+
+  const getFormatted = (current) => {
+    if (decimals > 0) {
+      return `${prefix}${current.toFixed(decimals)}${suffix}`;
+    }
+    return `${prefix}${Math.round(current)}${suffix}`;
+  };
+
+  const [display, setDisplay] = useState(() => (isNumeric ? getFormatted(0) : raw));
+
+  useEffect(() => {
+    if (!isNumeric) return undefined;
+
+    let raf;
+    let timeoutId;
+    const duration = 1400;
+    const easeOutCubic = (t) => 1 - (1 - t) ** 3;
+
+    const animate = (startTime) => {
+      const step = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const eased = easeOutCubic(progress);
+        setDisplay(getFormatted(target * eased));
+
+        if (progress < 1) {
+          raf = requestAnimationFrame(step);
+        } else {
+          setDisplay(raw);
+        }
+      };
+
+      raf = requestAnimationFrame(step);
+    };
+
+    timeoutId = setTimeout(() => {
+      animate(performance.now());
+    }, delay * 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, [delay, isNumeric, raw, target]);
+
+  return display;
+};
 
 const Hero = () => {
   const canvasRef = useRef(null);
@@ -242,7 +297,7 @@ const Hero = () => {
                   transition={{ delay: 1.1 + i * 0.1 }}
                 >
                   <div className="font-display text-3xl text-f1red" style={{ textShadow: '0 0 20px rgba(225,6,0,0.4)' }}>
-                    {stat.value}
+                    <StatCounter value={stat.value} delay={1.15 + i * 0.12} />
                   </div>
                   <div className="font-mono text-xs text-f1silver tracking-wider mt-1">{stat.label}</div>
                 </motion.div>

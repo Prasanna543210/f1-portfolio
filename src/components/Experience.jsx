@@ -43,6 +43,10 @@ const Experience = () => {
 
           <div className="space-y-8">
             {content.experience.items.map((exp, i) => (
+              (() => {
+                const isRevealSoonCard = Boolean(exp.revealSoon);
+
+                return (
               <motion.div
                 key={exp.year}
                 className={`relative flex gap-8 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-row`}
@@ -61,44 +65,62 @@ const Experience = () => {
 
                 {/* Card */}
                 <div className={`flex-1 ml-10 md:ml-0 ${i % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
-                  <div className="glass-card-hover p-6 relative overflow-hidden">
-                    {/* Lap label */}
-                    <div className="absolute top-4 right-4 font-mono text-xs text-f1red/30">{exp.lap}</div>
+                  {isRevealSoonCard ? (
+                    <div className="glass-card p-6 relative overflow-hidden bg-black/95 border border-f1red/35 min-h-[240px] flex items-center justify-center">
+                      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-black via-black to-f1dark/80" />
+                      <div className="absolute inset-0 pointer-events-none border border-f1red/20" />
+                      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-f1red to-transparent" />
 
-                    {/* Year badge */}
-                    <div className="font-mono text-xs text-f1red mb-2 tracking-wider">{exp.year}</div>
-
-                    <h3 className="font-display text-xl text-f1white tracking-wide">{exp.role}</h3>
-                    <div className="flex items-center gap-2 mb-4 mt-1">
-                      <span className="text-f1silver font-semibold text-sm">{exp.company}</span>
-                      <span className="text-f1silver/30">·</span>
-                      <span className="text-f1silver/50 text-sm">{exp.location}</span>
-                    </div>
-
-                    <p className="text-f1silver/60 text-sm leading-relaxed mb-4">{exp.desc}</p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {exp.tags.map(tag => (
-                        <span key={tag} className="font-mono text-xs text-f1red/70 border border-f1red/20 px-2 py-0.5">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Checkered corner */}
-                    <div className="absolute bottom-0 left-0 flex">
-                      {[...Array(3)].map((_, ci) => (
-                        <div key={ci} className="flex flex-col">
-                          {[...Array(3)].map((_, ri) => (
-                            <div key={ri} className="w-3 h-3"
-                                 style={{ backgroundColor: (ci + ri) % 2 === 0 ? 'rgba(225,6,0,0.1)' : 'transparent' }} />
-                          ))}
+                      <div className="relative z-10 text-center px-6">
+                        <div className="font-mono text-[11px] tracking-[0.35em] text-f1red/70">IN PROGRESS</div>
+                        <div className="font-display text-4xl md:text-5xl text-f1white mt-2 leading-none" style={{ textShadow: '0 0 18px rgba(225,6,0,0.45)' }}>
+                          REVEAL SOON
                         </div>
-                      ))}
+                        <div className="mt-3 h-px w-28 mx-auto bg-gradient-to-r from-transparent via-f1red to-transparent" />
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="glass-card-hover p-6 relative overflow-hidden">
+                      {/* Lap label */}
+                      <div className="absolute top-4 right-4 font-mono text-xs text-f1red/30">{exp.lap}</div>
+
+                      {/* Year badge */}
+                      <div className="font-mono text-xs text-f1red mb-2 tracking-wider">{exp.year}</div>
+
+                      <h3 className="font-display text-xl text-f1white tracking-wide">{exp.role}</h3>
+                      <div className="flex items-center gap-2 mb-4 mt-1">
+                        <span className="text-f1silver font-semibold text-sm">{exp.company}</span>
+                        <span className="text-f1silver/30">·</span>
+                        <span className="text-f1silver/50 text-sm">{exp.location}</span>
+                      </div>
+
+                      <p className="text-f1silver/60 text-sm leading-relaxed mb-4">{exp.desc}</p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {(exp.tags || []).map(tag => (
+                          <span key={tag} className="font-mono text-xs text-f1red/70 border border-f1red/20 px-2 py-0.5">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+
+                      {/* Checkered corner */}
+                      <div className="absolute bottom-0 left-0 flex">
+                        {[...Array(3)].map((_, ci) => (
+                          <div key={ci} className="flex flex-col">
+                            {[...Array(3)].map((_, ri) => (
+                              <div key={ri} className="w-3 h-3"
+                                   style={{ backgroundColor: (ci + ri) % 2 === 0 ? 'rgba(225,6,0,0.1)' : 'transparent' }} />
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
+                );
+              })()
             ))}
           </div>
         </div>
