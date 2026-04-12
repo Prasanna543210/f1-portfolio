@@ -41,17 +41,17 @@
     ],
     "cards": [
       {
-        "icon": "brain",
+        "icon": "Brain",
         "title": "Problem Solver",
         "desc": "Strong foundation in Data Structures and Algorithms."
       },
       {
-        "icon": "server",
+        "icon": "Server",
         "title": "Backend Focus",
         "desc": "Experienced in building scalable REST APIs."
       },
       {
-        "icon": "rocket",
+        "icon": "Rocket",
         "title": "Fast Learner",
         "desc": "Continuously improving through real-world projects."
       },

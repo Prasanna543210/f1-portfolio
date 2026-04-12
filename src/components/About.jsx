@@ -3,6 +3,46 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import content from '../content/siteContent.json';
 
+const iconClassName = 'w-6 h-6 text-f1red';
+
+const iconMap = {
+  brain: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconClassName} aria-hidden="true">
+      <path d="M9 4a3 3 0 0 0-3 3v1.2A2.8 2.8 0 0 0 4 11a3 3 0 0 0 1 2.2V15a3 3 0 0 0 3 3h1" />
+      <path d="M15 4a3 3 0 0 1 3 3v1.2A2.8 2.8 0 0 1 20 11a3 3 0 0 1-1 2.2V15a3 3 0 0 1-3 3h-1" />
+      <path d="M9 4a3 3 0 0 1 6 0v16a3 3 0 0 1-6 0V4Z" />
+    </svg>
+  ),
+  server: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconClassName} aria-hidden="true">
+      <rect x="4" y="4" width="16" height="6" rx="1.5" />
+      <rect x="4" y="14" width="16" height="6" rx="1.5" />
+      <path d="M8 7h.01M8 17h.01M12 7h4M12 17h4" />
+    </svg>
+  ),
+  rocket: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconClassName} aria-hidden="true">
+      <path d="M14 4c2.2 0 4 1.8 4 4 0 4.5-3.6 8.5-7.2 10.8-.6.4-1.4.3-1.9-.2l-.7-.7-.7.7c-.5.5-1.3.6-1.9.2C4 16.5 3 14.2 3 12c0-3.9 3.1-8 8-8h3Z" />
+      <path d="M15 9l-3 3" />
+      <path d="M10 14l-2 2" />
+      <path d="M15.5 4.5 19 1l1 4-3.5 3.5" />
+    </svg>
+  ),
+  trophy: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={iconClassName} aria-hidden="true">
+      <path d="M8 4h8v2a4 4 0 0 1-8 0V4Z" />
+      <path d="M7 6H5a2 2 0 0 0 2 2" />
+      <path d="M17 6h2a2 2 0 0 1-2 2" />
+      <path d="M10 14h4" />
+      <path d="M12 16v3" />
+      <path d="M9 19h6" />
+      <path d="M8 4v2a4 4 0 0 0 8 0V4" />
+    </svg>
+  ),
+};
+
+const getCardIcon = (name) => iconMap[name?.toLowerCase()] || null;
+
 const About = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
@@ -79,7 +119,7 @@ const About = () => {
                 initial="hidden"
                 animate={inView ? 'visible' : 'hidden'}
               >
-                <div className="text-2xl mb-3">{card.icon}</div>
+                <div className="mb-3 flex items-center">{getCardIcon(card.icon)}</div>
                 <h3 className="font-display text-f1white text-lg tracking-wide mb-2">{card.title}</h3>
                 <p className="text-f1silver/60 text-sm leading-relaxed">{card.desc}</p>
               </motion.div>
