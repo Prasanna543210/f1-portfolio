@@ -94,7 +94,7 @@ const Hero = () => {
         <div className="w-full grid lg:grid-cols-[280px_minmax(0,1fr)] xl:grid-cols-[320px_minmax(0,1fr)] lg:gap-24 xl:gap-28 gap-12 items-start lg:items-center">
           {/* F1 profile container */}
           <motion.div
-            className="hidden lg:block"
+            className="block w-full max-w-[260px] sm:max-w-[300px] lg:max-w-none mx-auto lg:mx-0"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
