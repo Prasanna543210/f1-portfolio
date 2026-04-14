@@ -8,6 +8,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
+import NanoMusicPlayer from './components/NanoMusicPlayer';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +30,7 @@ function App() {
             <Experience />
             <Contact />
           </main>
+          <NanoMusicPlayer />
         </>
       )}
     </>
