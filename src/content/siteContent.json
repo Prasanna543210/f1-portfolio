@@ -19,7 +19,7 @@
     "primaryCta": "View Projects",
     "secondaryCta": "Get In Touch",
     "stats": [
-      { "value": "8.29", "label": "CGPA" },
+      { "value": "8.33", "label": "CGPA" },
       { "value": "5+", "label": "Projects Built" },
       { "value": "2027", "label": "Graduation Year" },
       { "value": "100+", "label": "DSA Problems" }
